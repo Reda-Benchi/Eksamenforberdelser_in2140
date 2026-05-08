@@ -54,11 +54,20 @@
       const showing = el.style.display === "block";
       el.style.display = showing ? "none" : "block";
       el.setAttribute("aria-hidden", showing ? "true" : "false");
-      if (button) button.setAttribute("aria-expanded", showing ? "false" : "true");
+      if (button) {
+        const questionIndex = button.dataset.questionIndex || "";
+        button.setAttribute("aria-expanded", showing ? "false" : "true");
+        button.textContent = showing ? "Show answer" : "Hide answer";
+        button.setAttribute(
+          "aria-label",
+          `${showing ? "Show" : "Hide"} answer for question ${questionIndex}`
+        );
+      }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll('.q button').forEach((button, index) => {
+        button.dataset.questionIndex = String(index + 1);
         button.setAttribute("aria-label", `Show answer for question ${index + 1}`);
         button.setAttribute("aria-expanded", "false");
       });
