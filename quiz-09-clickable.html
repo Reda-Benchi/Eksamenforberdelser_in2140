@@ -54,7 +54,7 @@
       el.style.display = showing ? "none" : "block";
       el.setAttribute("aria-hidden", showing ? "true" : "false");
       if (button) {
-        const questionIndex = button.dataset.questionIndex;
+        const questionIndex = button.dataset.questionIndex || id.replace(/^a/, "");
         button.setAttribute("aria-expanded", showing ? "false" : "true");
         button.textContent = showing ? "Show answer" : "Hide answer";
         button.setAttribute(
