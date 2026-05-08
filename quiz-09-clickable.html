@@ -19,39 +19,53 @@
 
   <h2>Part A — Theory (70%)</h2>
 
-  <div class="q"><b>1) Multiple Choice:</b> Which is a main motivation for IPv6?<br>A) Smaller headers than IPv4<br>B) More addresses and better scalability<br>C) Removal of routing<br>D) No need for DNS<br><button onclick="t('a1')">Show answer</button><div class="ans" id="a1">Answer: <b>B</b></div></div>
-  <div class="q"><b>2) True/False:</b> IPv6 was designed partly to improve support for mobility and QoS.<br><button onclick="t('a2')">Show answer</button><div class="ans" id="a2">Answer: <b>True</b></div></div>
-  <div class="q"><b>3) Multiple Choice:</b> In CIDR routing, if multiple entries match, routers choose:<br>A) First inserted rule<br>B) Shortest mask<br>C) Longest matching prefix<br>D) Random rule<br><button onclick="t('a3')">Show answer</button><div class="ans" id="a3">Answer: <b>C</b></div></div>
-  <div class="q"><b>4) Match:</b> 1.Netmask 2.Subnet address 3.Host/interface part 4.Longest prefix match<br>a. Chooses most specific route b. Identifies network bits c. Device-specific part d. Result of address &amp; mask<br><button onclick="t('a4')">Show answer</button><div class="ans" id="a4">Answer: <b>1-b, 2-d, 3-c, 4-a</b></div></div>
-  <div class="q"><b>5) Multiple Choice:</b> Which field exists in IPv6 header (but not as same purpose in IPv4)?<br>A) Header checksum<br>B) Flow label<br>C) Fragment offset (mandatory)<br>D) IHL<br><button onclick="t('a5')">Show answer</button><div class="ans" id="a5">Answer: <b>B</b></div></div>
-  <div class="q"><b>6) True/False:</b> IPv6 routers fragment packets in-network just like IPv4 routers.<br><button onclick="t('a6')">Show answer</button><div class="ans" id="a6">Answer: <b>False</b></div></div>
-  <div class="q"><b>7) Multiple Choice:</b> Valid compressed IPv6 notation example:<br>A) 2a00::1450::80a::2004<br>B) 2a00:1450:400f:80a::2004<br>C) 2a00-1450-400f-80a-2004<br>D) 2a00:1450:400f:80a:0:0:0:0:2004<br><button onclick="t('a7')">Show answer</button><div class="ans" id="a7">Answer: <b>B</b></div></div>
-  <div class="q"><b>8) Multiple Choice:</b> A link-local IPv6 address typically starts with:<br>A) 2001::<br>B) FE80::<br>C) FF00::<br>D) FC00::<br><button onclick="t('a8')">Show answer</button><div class="ans" id="a8">Answer: <b>B</b></div></div>
-  <div class="q"><b>9) True/False:</b> Before using a self-assigned IPv6 link-local address, duplicate-address checking is performed.<br><button onclick="t('a9')">Show answer</button><div class="ans" id="a9">Answer: <b>True</b></div></div>
-  <div class="q"><b>10) Multiple Choice:</b> Transport layer multiplexing/demultiplexing is mainly based on:<br>A) MAC addresses<br>B) IP TTL<br>C) Port numbers + endpoint info<br>D) Ethernet type only<br><button onclick="t('a10')">Show answer</button><div class="ans" id="a10">Answer: <b>C</b></div></div>
-  <div class="q"><b>11) Match service to default port:</b> 1.SSH 2.SMTP 3.DNS 4.HTTP — a.53 b.25 c.22 d.80<br><button onclick="t('a11')">Show answer</button><div class="ans" id="a11">Answer: <b>1-c, 2-b, 3-a, 4-d</b></div></div>
-  <div class="q"><b>12) True/False:</b> A TCP socket pair can be described by endpoint address+port on both sides.<br><button onclick="t('a12')">Show answer</button><div class="ans" id="a12">Answer: <b>True</b></div></div>
-  <div class="q"><b>13) Multiple Choice:</b> DNS is best described as:<br>A) Flat namespace managed by one server<br>B) Hierarchical distributed naming system<br>C) Broadcast-only naming protocol<br>D) Link-layer addressing scheme<br><button onclick="t('a13')">Show answer</button><div class="ans" id="a13">Answer: <b>B</b></div></div>
-  <div class="q"><b>14) Multiple Choice:</b> Root DNS servers are primarily responsible for:<br>A) Storing every hostname globally<br>B) Hosting only local university zones<br>C) Referring queries toward TLD authorities<br>D) Replacing recursive resolvers<br><button onclick="t('a14')">Show answer</button><div class="ans" id="a14">Answer: <b>C</b></div></div>
-  <div class="q"><b>15) True/False:</b> DNS caching lowers latency and server load, but can delay visibility of updates.<br><button onclick="t('a15')">Show answer</button><div class="ans" id="a15">Answer: <b>True</b></div></div>
-  <div class="q"><b>16) Multiple Choice:</b> Recursive DNS query behavior:<br>A) Resolver does all follow-up steps for client<br>B) Every reply is always authoritative<br>C) No server keeps any state<br>D) Cannot use cache<br><button onclick="t('a16')">Show answer</button><div class="ans" id="a16">Answer: <b>A</b></div></div>
-  <div class="q"><b>17) Match DNS record to use:</b> 1.A/AAAA 2.NS 3.SOA 4.SRV — a.Service location b.Zone authority metadata c.Name server delegation d.Hostname to IP<br><button onclick="t('a17')">Show answer</button><div class="ans" id="a17">Answer: <b>1-d, 2-c, 3-b, 4-a</b></div></div>
+  <div class="q"><b>1) Multiple Choice:</b> Which is a main motivation for IPv6?<br>A) Smaller headers than IPv4<br>B) More addresses and better scalability<br>C) Removal of routing<br>D) No need for DNS<br><button onclick="toggleAnswer('a1')">Show answer</button><div class="ans" id="a1">Answer: <b>B</b></div></div>
+  <div class="q"><b>2) True/False:</b> IPv6 was designed partly to improve support for mobility and QoS.<br><button onclick="toggleAnswer('a2')">Show answer</button><div class="ans" id="a2">Answer: <b>True</b></div></div>
+  <div class="q"><b>3) Multiple Choice:</b> In CIDR routing, if multiple entries match, routers choose:<br>A) First inserted rule<br>B) Shortest mask<br>C) Longest matching prefix<br>D) Random rule<br><button onclick="toggleAnswer('a3')">Show answer</button><div class="ans" id="a3">Answer: <b>C</b></div></div>
+  <div class="q"><b>4) Match:</b> 1.Netmask 2.Subnet address 3.Host/interface part 4.Longest prefix match<br>a. Chooses most specific route b. Identifies network bits c. Device-specific part d. Result of address &amp; mask<br><button onclick="toggleAnswer('a4')">Show answer</button><div class="ans" id="a4">Answer: <b>1-b, 2-d, 3-c, 4-a</b></div></div>
+  <div class="q"><b>5) Multiple Choice:</b> Which field exists in IPv6 header (but not as same purpose in IPv4)?<br>A) Header checksum<br>B) Flow label<br>C) Fragment offset (mandatory)<br>D) IHL<br><button onclick="toggleAnswer('a5')">Show answer</button><div class="ans" id="a5">Answer: <b>B</b></div></div>
+  <div class="q"><b>6) True/False:</b> IPv6 routers fragment packets in-network just like IPv4 routers.<br><button onclick="toggleAnswer('a6')">Show answer</button><div class="ans" id="a6">Answer: <b>False</b></div></div>
+  <div class="q"><b>7) Multiple Choice:</b> Valid compressed IPv6 notation example:<br>A) 2a00::1450::80a::2004<br>B) 2a00:1450:400f:80a::2004<br>C) 2a00-1450-400f-80a-2004<br>D) 2a00:1450:400f:80a:0:0:0:0:2004<br><button onclick="toggleAnswer('a7')">Show answer</button><div class="ans" id="a7">Answer: <b>B</b></div></div>
+  <div class="q"><b>8) Multiple Choice:</b> A link-local IPv6 address typically starts with:<br>A) 2001::<br>B) FE80::<br>C) FF00::<br>D) FC00::<br><button onclick="toggleAnswer('a8')">Show answer</button><div class="ans" id="a8">Answer: <b>B</b></div></div>
+  <div class="q"><b>9) True/False:</b> Before using a self-assigned IPv6 link-local address, duplicate-address checking is performed.<br><button onclick="toggleAnswer('a9')">Show answer</button><div class="ans" id="a9">Answer: <b>True</b></div></div>
+  <div class="q"><b>10) Multiple Choice:</b> Transport layer multiplexing/demultiplexing is mainly based on:<br>A) MAC addresses<br>B) IP TTL<br>C) Port numbers + endpoint info<br>D) Ethernet type only<br><button onclick="toggleAnswer('a10')">Show answer</button><div class="ans" id="a10">Answer: <b>C</b></div></div>
+  <div class="q"><b>11) Match service to default port:</b> 1.SSH 2.SMTP 3.DNS 4.HTTP — a.53 b.25 c.22 d.80<br><button onclick="toggleAnswer('a11')">Show answer</button><div class="ans" id="a11">Answer: <b>1-c, 2-b, 3-a, 4-d</b></div></div>
+  <div class="q"><b>12) True/False:</b> A TCP socket pair can be described by endpoint address+port on both sides.<br><button onclick="toggleAnswer('a12')">Show answer</button><div class="ans" id="a12">Answer: <b>True</b></div></div>
+  <div class="q"><b>13) Multiple Choice:</b> DNS is best described as:<br>A) Flat namespace managed by one server<br>B) Hierarchical distributed naming system<br>C) Broadcast-only naming protocol<br>D) Link-layer addressing scheme<br><button onclick="toggleAnswer('a13')">Show answer</button><div class="ans" id="a13">Answer: <b>B</b></div></div>
+  <div class="q"><b>14) Multiple Choice:</b> Root DNS servers are primarily responsible for:<br>A) Storing every hostname globally<br>B) Hosting only local university zones<br>C) Referring queries toward TLD authorities<br>D) Replacing recursive resolvers<br><button onclick="toggleAnswer('a14')">Show answer</button><div class="ans" id="a14">Answer: <b>C</b></div></div>
+  <div class="q"><b>15) True/False:</b> DNS caching lowers latency and server load, but can delay visibility of updates.<br><button onclick="toggleAnswer('a15')">Show answer</button><div class="ans" id="a15">Answer: <b>True</b></div></div>
+  <div class="q"><b>16) Multiple Choice:</b> Recursive DNS query behavior:<br>A) Resolver does all follow-up steps for client<br>B) Every reply is always authoritative<br>C) No server keeps any state<br>D) Cannot use cache<br><button onclick="toggleAnswer('a16')">Show answer</button><div class="ans" id="a16">Answer: <b>A</b></div></div>
+  <div class="q"><b>17) Match DNS record to use:</b> 1.A/AAAA 2.NS 3.SOA 4.SRV — a.Service location b.Zone authority metadata c.Name server delegation d.Hostname to IP<br><button onclick="toggleAnswer('a17')">Show answer</button><div class="ans" id="a17">Answer: <b>1-d, 2-c, 3-b, 4-a</b></div></div>
 
   <h2>Part B — Programming-style (30%)</h2>
 
-  <div class="q"><b>18) Multiple Choice:</b> <code>socket(AF_INET, SOCK_DGRAM, 0)</code> creates:<br>A) IPv6 TCP socket<br>B) IPv4 UDP socket<br>C) Raw Ethernet socket<br>D) Unix domain stream socket<br><button onclick="t('a18')">Show answer</button><div class="ans" id="a18">Answer: <b>B</b></div></div>
-  <div class="q"><b>19) True/False:</b> UDP communication can work without calling <code>listen()</code>/<code>accept()</code>.<br><button onclick="t('a19')">Show answer</button><div class="ans" id="a19">Answer: <b>True</b></div></div>
-  <div class="q"><b>20) Multiple Choice:</b> In C socket setup for IPv4 bind, <code>addr.sin_family</code> should be:<br>A) PF_PACKET<br>B) AF_INET<br>C) AF_UNIX<br>D) IPPROTO_TCP<br><button onclick="t('a20')">Show answer</button><div class="ans" id="a20">Answer: <b>B</b></div></div>
-  <div class="q"><b>21) Multiple Choice:</b> A client opening many simultaneous TCP connections to one server mostly varies its:<br>A) Destination IP<br>B) Destination port<br>C) Source ephemeral port<br>D) DNS zone<br><button onclick="t('a21')">Show answer</button><div class="ans" id="a21">Answer: <b>C</b></div></div>
-  <div class="q"><b>22) True/False:</b> In transport demultiplexing, destination port helps deliver incoming data to correct process.<br><button onclick="t('a22')">Show answer</button><div class="ans" id="a22">Answer: <b>True</b></div></div>
-  <div class="q"><b>23) Order (iterative DNS):</b> A.Local resolver asks root B.Resolver asks TLD C.Resolver asks authoritative D.Resolver returns final answer<br><button onclick="t('a23')">Show answer</button><div class="ans" id="a23">Answer: <b>A → B → C → D</b></div></div>
-  <div class="q"><b>24) Multiple Choice:</b> If <code>dst_addr &amp; netmask == subnet_addr</code>, destination is:<br>A) Unknown<br>B) Local subnet match<br>C) Always external route<br>D) Loopback-only<br><button onclick="t('a24')">Show answer</button><div class="ans" id="a24">Answer: <b>B</b></div></div>
+  <div class="q"><b>18) Multiple Choice:</b> <code>socket(AF_INET, SOCK_DGRAM, 0)</code> creates:<br>A) IPv6 TCP socket<br>B) IPv4 UDP socket<br>C) Raw Ethernet socket<br>D) Unix domain stream socket<br><button onclick="toggleAnswer('a18')">Show answer</button><div class="ans" id="a18">Answer: <b>B</b></div></div>
+  <div class="q"><b>19) True/False:</b> UDP communication can work without calling <code>listen()</code>/<code>accept()</code>.<br><button onclick="toggleAnswer('a19')">Show answer</button><div class="ans" id="a19">Answer: <b>True</b></div></div>
+  <div class="q"><b>20) Multiple Choice:</b> In C socket setup for IPv4 bind, <code>addr.sin_family</code> should be:<br>A) PF_PACKET<br>B) AF_INET<br>C) AF_UNIX<br>D) IPPROTO_TCP<br><button onclick="toggleAnswer('a20')">Show answer</button><div class="ans" id="a20">Answer: <b>B</b></div></div>
+  <div class="q"><b>21) Multiple Choice:</b> A client opening many simultaneous TCP connections to one server mostly varies its:<br>A) Destination IP<br>B) Destination port<br>C) Source ephemeral port<br>D) DNS zone<br><button onclick="toggleAnswer('a21')">Show answer</button><div class="ans" id="a21">Answer: <b>C</b></div></div>
+  <div class="q"><b>22) True/False:</b> In transport demultiplexing, destination port helps deliver incoming data to correct process.<br><button onclick="toggleAnswer('a22')">Show answer</button><div class="ans" id="a22">Answer: <b>True</b></div></div>
+  <div class="q"><b>23) Order (iterative DNS):</b> A.Local resolver asks root B.Resolver asks TLD C.Resolver asks authoritative D.Resolver returns final answer<br><button onclick="toggleAnswer('a23')">Show answer</button><div class="ans" id="a23">Answer: <b>A → B → C → D</b></div></div>
+  <div class="q"><b>24) Multiple Choice:</b> If <code>dst_addr &amp; netmask == subnet_addr</code>, destination is:<br>A) Unknown<br>B) Local subnet match<br>C) Always external route<br>D) Loopback-only<br><button onclick="toggleAnswer('a24')">Show answer</button><div class="ans" id="a24">Answer: <b>B</b></div></div>
 
   <script>
-    function t(id) {
+    function toggleAnswer(id) {
       const el = document.getElementById(id);
-      el.style.display = el.style.display === "block" ? "none" : "block";
+      const button = document.querySelector(`button[onclick="toggleAnswer('${id}')"]`);
+      const showing = el.style.display === "block";
+      el.style.display = showing ? "none" : "block";
+      el.setAttribute("aria-hidden", showing ? "true" : "false");
+      if (button) button.setAttribute("aria-expanded", showing ? "false" : "true");
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.q button').forEach((button, index) => {
+        button.setAttribute("aria-label", `Show answer for question ${index + 1}`);
+        button.setAttribute("aria-expanded", "false");
+      });
+      document.querySelectorAll('.ans').forEach((answer) => {
+        answer.setAttribute("aria-hidden", "true");
+      });
+    });
   </script>
 </body>
 </html>
