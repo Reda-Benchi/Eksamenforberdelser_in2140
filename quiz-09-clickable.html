@@ -50,7 +50,7 @@
   <script>
     function toggleAnswer(id, button) {
       const el = document.getElementById(id);
-      const showing = el.style.display === "block";
+      const showing = window.getComputedStyle(el).display !== "none";
       el.style.display = showing ? "none" : "block";
       el.setAttribute("aria-hidden", showing ? "true" : "false");
       if (button) {
